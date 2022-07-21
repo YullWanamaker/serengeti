@@ -8,6 +8,23 @@ article {
   flex-direction: column;
 }
 
+#logo{
+  text-align: center;
+}
+
+#belbox{
+  
+}
+
+
+#bel{
+
+  width: 70px;
+  height: 70px;
+  margin: 0px auto
+
+}
+
 .question {
   display: none;
 }
