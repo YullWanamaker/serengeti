@@ -12,15 +12,22 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+
+
+
   </head>
   <body class="container">
     <articel class="start">
-      <h1 class="mt-5" text="center">
-        나랑 똑 닮은 지덕체영 성향을 가진 동물은?
-      </h1>
-      <button type="button" class="btn btn-primary mt-5" onclick="start();">
+
+
+      <h1 class="mt-5 text-center"> 크로스핏으로 확인하는 MBTI </h1>
+      <h2 class="sub-title mtr-3 text-center"> 나는 크로스핏터로서 어떤 MBTI를 가질까?</h2>
+    <div id="test-start">
+      <button type="button" class="btn btn-primary mt-5" onclick="start(); ">
         테스트 시작하기
-      </button>
+      </button> </div>
+    
+      </articel>
     </articel>
 
     <article class="question">
@@ -33,7 +40,7 @@
         ></div>
       </div>
       <h2 id="title" class="text-center mt-5">문제</h2>
-      <input id="type" type="hidden" value="EI"">
+      <input id="type" type="hidden" value="EI">
       <button id="A" type="button" class="btn btn-primary mt-5">Primary</button>
       <button id="B" type="button" class="btn btn-primary mt-5">Primary</button>
     </article>
@@ -80,9 +87,20 @@
         12: { title: "문제 13번", type: "JP", A: "J", B: "P" },
       };
 
+      var result = {
+        ISTJ: { animal: "하마", explain: "하마설명", img: "lion.jpg" },
+        ENFP: {
+          animal: "멋쟁이 사자",
+          explain: "멋쟁이 사자 설명",
+          img: "lion.jpg",
+        },
+        ISTJ: { animal: "호랑이", explain: "호랑이 설명", img: "lion.jpg" },
+      };
+
       function start() {
         $(".start").hide();
         $(".question").show();
+        next();
       }
 
       $("#A").click(function () {
@@ -103,8 +121,10 @@
           $("#EI").val() < 2 ? (mbti += "I") : (mbti += "E");
           $("#SN").val() < 2 ? (mbti += "N") : (mbti += "S");
           $("#TF").val() < 2 ? (mbti += "F") : (mbti += "T");
-          $("#FP").val() < 2 ? (mbti += "P") : (mbti += "J");
-          alert(mbti);
+          $("#JP").val() < 2 ? (mbti += "P") : (mbti += "J");
+          $("#igm").attr("src", result[mbti]["img"]);
+          $("#animal").html(result[mbti]["animal"]);
+          $("#explain").html(result[mbti]["explain"]);
         } else {
           $(".progress-bar").attr(
             "style",
@@ -119,4 +139,8 @@
       }
     </script>
   </body>
+
+  <footer>
+    <p>copyright 조율. All rights reserved</p>
+    </footer> 
 </html>
