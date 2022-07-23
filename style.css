@@ -30,6 +30,7 @@ text-align: center;
 }
 
 
+
 .share-message
 {text-align: center;
 
@@ -62,4 +63,6 @@ footer {
   margin-top: 24px;
 }
 
-  
+.share{
+  margin: 0 auto;
+}
